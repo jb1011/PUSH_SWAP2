@@ -149,7 +149,8 @@ void	ft_main_sequel(t_util *util)
 			parse_big(util);
 		}
 	}
+	ft_putnbr_fd(util->counter, 0);
+	ft_putstr_fd("\n", 0);
 	printStack(util->sta);
-
 	freeList(util);
 }
