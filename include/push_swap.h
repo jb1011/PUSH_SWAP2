@@ -93,5 +93,6 @@ void	addAt_B2(t_stack	*cell, t_stack *prec, int pos, t_stack *current);
 void	ft_main_sequel(t_util *util);
 int		test_int_max(char **argv, int *tab, int i, int j);
 void	addnew(t_util *util, int data);
+void	addnew_b(t_util *util, int data);
 
 #endif

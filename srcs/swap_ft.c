@@ -62,13 +62,11 @@ void	rrb(t_util *util)
 
 void	ra(t_util *util)
 {
-	int	pos;
 	int	data;
 
-	pos = lenStack(util->sta) - 1;
 	data = getAt(util->sta, 0);
 	freeAt(util, 0);
-	addAt(util, data, pos);
+	addnew(util, data);
 	util->counter++;
 	ft_putstr_fd("ra\n", 1);
 }

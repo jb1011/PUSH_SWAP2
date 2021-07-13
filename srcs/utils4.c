@@ -14,11 +14,16 @@
 
 int	test_int_max(char **argv, int *tab, int i, int j)
 {
+	char	*str;
+
 	tab[i] = ft_atoi(argv[j]);
-	if (ft_strncmp(argv[j], ft_itoa(tab[i]), ft_strlen(argv[j])) != 0)
+	str = ft_itoa(tab[i]);
+	if (ft_strncmp(argv[j], str, ft_strlen(argv[j])) != 0)
 	{
 		ft_putstr_fd("Error\n", 0);
+		free(str);
 		return (0);
 	}
+	free(str);
 	return (1);
 }

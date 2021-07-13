@@ -14,13 +14,11 @@
 
 void	rb(t_util *util)
 {
-	int	pos;
 	int	data;
 
-	pos = lenStack(util->stb) - 1;
 	data = getAt(util->stb, 0);
 	freeAt_B(util, 0);
-	addAt_B(util, data, pos);
+	addnew_b(util, data);
 	util->counter++;
 	ft_putstr_fd("rb\n", 1);
 }

@@ -45,6 +45,7 @@ void	sort_b(t_stack *stb, t_util *util)
 
 	len = lenStack(stb);
 	i = 0;
+	ft_find_smallest(stb, util);
 	if (util->i > len / 2)
 	{
 		nbr = len - util->i;

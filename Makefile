@@ -18,7 +18,7 @@ LINK = ar rc
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g3 -fsanitize=address
 
 RM = rm -rf
 
