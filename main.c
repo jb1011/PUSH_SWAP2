@@ -92,8 +92,10 @@ void	ft_parse_arg(char **argv, t_util *util)
 		}
 		if (test_int_max(tab, arr, j, j) == 0)
 			return ;
+		free(tab[j]);
 		j++;
 	}
+	free(tab);
 	ft_check_double_arg(arr, j, util);
 }
 
@@ -104,7 +106,7 @@ int	main(int argc, char **argv)
 
 	i = 0;
 	init_list(&util);
-	if (argc > 2)
+	if (argc > 1)
 	{
 		if (ft_strchr(argv[1], ' '))
 			ft_parse_arg(argv, &util);
