@@ -27,3 +27,47 @@ int	test_int_max(char **argv, int *tab, int i, int j)
 	free(str);
 	return (1);
 }
+
+void	init_list(t_util *util)
+{
+	util->sta = NULL;
+	util->stb = NULL;
+}
+
+void	addAt(t_util *util, int data, int pos)
+{
+	t_stack	*prec;
+	t_stack	*current;
+	t_stack	*cell;
+
+	cell = createCell(data);
+	prec = util->sta;
+	current = util->sta;
+	if (is_empty(util->sta))
+	{
+		util->sta = cell;
+		return ;
+	}
+	if (pos == 0)
+	{
+		cell->next = util->sta;
+		util->sta = cell;
+		return ;
+	}
+	addAt2(cell, prec, pos, current);
+}
+
+void	addAt2(t_stack *cell, t_stack *prec, int pos, t_stack *current)
+{
+	int	i;
+
+	i = 0;
+	while (i < pos)
+	{
+		i++;
+		prec = current;
+		current = current->next;
+	}
+	prec->next = cell;
+	cell->next = current;
+}

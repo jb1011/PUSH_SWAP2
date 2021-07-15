@@ -65,7 +65,6 @@ void	ft_check_double_arg(int	*arr, int count, t_util *util)
 	i = -1;
 	while (++i < count)
 		addnew(util, arr[i]);
-		// addAt(util, arr[i], i);
 	util->go = 1;
 }
 
@@ -104,8 +103,7 @@ int	main(int argc, char **argv)
 	int		i;
 
 	i = 0;
-	util.sta = NULL;
-	util.stb = NULL;
+	init_list(&util);
 	if (argc > 2)
 	{
 		if (ft_strchr(argv[1], ' '))
@@ -115,10 +113,8 @@ int	main(int argc, char **argv)
 			util.lenstack = argc - 1;
 			util.go = 1;
 			if (test_double(argv, argc) && test_argv(argv, argc))
-			{
 				while (++i < argc)
 					initStack(&util, argv[i]);
-			}
 			else
 			{
 				freeList(&util);
@@ -149,8 +145,5 @@ void	ft_main_sequel(t_util *util)
 			parse_big(util);
 		}
 	}
-	ft_putnbr_fd(util->counter, 0);
-	ft_putstr_fd("\n", 0);
-	printStack(util->sta);
 	freeList(util);
 }

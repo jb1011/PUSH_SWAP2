@@ -17,7 +17,6 @@ void	freeList(t_util *util)
 	t_stack	*tmp;
 	t_stack	*to_delete;
 
-
 	tmp = util->sta;
 	if (!is_empty(tmp))
 	{

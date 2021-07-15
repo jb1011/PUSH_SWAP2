@@ -94,5 +94,6 @@ void	ft_main_sequel(t_util *util);
 int		test_int_max(char **argv, int *tab, int i, int j);
 void	addnew(t_util *util, int data);
 void	addnew_b(t_util *util, int data);
+void	init_list(t_util *util);
 
 #endif
