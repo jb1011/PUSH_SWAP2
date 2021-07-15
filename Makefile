@@ -33,6 +33,7 @@ all:        ${NAME}
 
 ${NAME}:    ${MV} ${OBJ_MAIN} ${OBJS}
 			${LINK} ${MYLIB} ${OBJS}
+			make -C ./libft/
 			ranlib ${MYLIB}
 			${CC} ${FLAGS} -o3 ${OBJ_MAIN} ${MYLIB} -o ${NAME} libft/libft.a
 
