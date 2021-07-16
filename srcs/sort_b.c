@@ -65,33 +65,33 @@ void	sort_b(t_stack *stb, t_util *util)
 	}
 }
 
-void	sort_b_bigtop(t_stack *stb, t_util *util)
-{
-	int	len;
-	int	i;
-	int	nbr;
+// void	sort_b_bigtop(t_stack *stb, t_util *util)
+// {
+// 	int	len;
+// 	int	i;
+// 	int	nbr;
 
-	len = lenStack(stb);
-	i = 0;
-	ft_find_biggest(util->stb);
-	if (util->i > len / 2)
-	{
-		nbr = len - util->i;
-		while (i < nbr)
-		{
-			rrb(util);
-			i++;
-		}
-	}
-	else
-	{
-		while (i < util->i)
-		{
-			rb(util);
-			i++;
-		}
-	}
-}
+// 	len = lenStack(stb);
+// 	i = 0;
+// 	ft_find_biggest(util->stb);
+// 	if (util->i > len / 2)
+// 	{
+// 		nbr = len - util->i;
+// 		while (i < nbr)
+// 		{
+// 			rrb(util);
+// 			i++;
+// 		}
+// 	}
+// 	else
+// 	{
+// 		while (i < util->i)
+// 		{
+// 			rb(util);
+// 			i++;
+// 		}
+// 	}
+// }
 
 int	is_bigger(t_util *util)
 {
@@ -103,62 +103,62 @@ int	is_bigger(t_util *util)
 	return (0);
 }
 
-void	fetch_min(t_util *util)
-{
-	int	i;
-	int	len;
-	int	nbr;
+// void	fetch_min(t_util *util)
+// {
+// 	int	i;
+// 	int	len;
+// 	int	nbr;
 
-	i = 0;
-	ft_find_small(util->sta, util);
-	len = lenStack(util->sta);
-	if (util->small > len / 2)
-	{
-		nbr = len - util->small;
-		while (i < nbr)
-		{
-			rra(util);
-			i++;
-		}
-	}
-	else
-	{
-		while (i < util->small)
-		{
-			ra(util);
-			i++;
-		}
-	}
-	util->len--;
-}
+// 	i = 0;
+// 	ft_find_small(util->sta, util);
+// 	len = lenStack(util->sta);
+// 	if (util->small > len / 2)
+// 	{
+// 		nbr = len - util->small;
+// 		while (i < nbr)
+// 		{
+// 			rra(util);
+// 			i++;
+// 		}
+// 	}
+// 	else
+// 	{
+// 		while (i < util->small)
+// 		{
+// 			ra(util);
+// 			i++;
+// 		}
+// 	}
+// 	util->len--;
+// }
 
-void	put_mintop(t_util *util)
-{
-	int	i;
-	int	len;
-	int	nbr;
+// void	put_mintop(t_util *util)
+// {
+// 	int	i;
+// 	int	len;
+// 	int	nbr;
 
-	i = 0;
-	ft_find_small(util->stb, util);
-	len = lenStack(util->stb);
-	if (util->small > len / 2)
-	{
-		nbr = len - util->small;
-		while (i < nbr)
-		{
-			rrb(util);
-			i++;
-		}
-	}
-	else
-	{
-		while (i < util->small)
-		{
-			rb(util);
-			i++;
-		}
-	}
-}
+// 	i = 0;
+// 	ft_find_small(util->stb, util);
+// 	len = lenStack(util->stb);
+// 	if (util->small > len / 2)
+// 	{
+// 		nbr = len - util->small;
+// 		while (i < nbr)
+// 		{
+// 			rrb(util);
+// 			i++;
+// 		}
+// 	}
+// 	else
+// 	{
+// 		while (i < util->small)
+// 		{
+// 			rb(util);
+// 			i++;
+// 		}
+// 	}
+// }
 
 void	put_closemintop(t_util *util)
 {

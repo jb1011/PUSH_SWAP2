@@ -147,7 +147,5 @@ void	ft_main_sequel(t_util *util)
 			parse_big(util);
 		}
 	}
-	printStack(util->sta);
-
 	freeList(util);
 }
