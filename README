@@ -1,4 +1,4 @@
 
 printStack(util->sta);
-
+python3 pyviz.py `ruby -e "puts (0..99).to_a.shuffle.join(' ')"`
 https://numbergenerator.org/randomnumbergenerator#!numbers=100&low=0&high=99&unique=true&csv=&oddeven=&oddqty=0&sorted=false&addfilters=

@@ -193,28 +193,16 @@ int	ft_find_closest(t_stack *sta, t_util *util)
 	int		search;
 	t_stack	*tmp;
 	int		i;
-	int		y;
 
 	search = util->sta->val;
 	util->close = 0;
+	i = 0;
 	tmp = sta;
 	while (tmp)
 	{
-		if (tmp->val < search)
+		if (tmp->val < search && i < tmp->val)
 			i = tmp->val;
 		tmp = tmp->next;
-	}
-	tmp = sta;
-	y = 0;
-	while (y < lenStack(util->stb))
-	{
-		while (tmp)
-		{
-			if (tmp->val < search && i < tmp->val)
-				i = tmp->val;
-			tmp = tmp->next;
-		}
-		y++;
 	}
 	tmp = sta;
 	while (tmp)
