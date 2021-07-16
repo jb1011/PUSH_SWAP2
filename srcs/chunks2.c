@@ -28,10 +28,19 @@ int	still_chunk(t_util *util, int min, int max)
 
 void	parse_medium(t_util *util)
 {
+	// fetch_min(util);
+	// push_b(util);
+
 	while (still_chunk(util, 0, util->chunk1))
 	{
 		ft_scan(util, 0, util->chunk1);
 		ft_move_chunks(util);
+		if (is_bigger(util) == 1)
+			sort_b(util->stb, util);
+		else
+			put_closemintop(util);
+
+
 		push_b(util);
 		util->len--;
 	}
@@ -39,6 +48,14 @@ void	parse_medium(t_util *util)
 	{
 		ft_scan(util, util->chunk1, util->chunk2);
 		ft_move_chunks(util);
+		if (is_bigger(util) == 1)
+			sort_b(util->stb, util);
+		else
+			put_closemintop(util);
+		// if (is_bigger(util) == 0)
+		// 	sort_b(util->stb, util);
+		// else
+		// 	sort_b_bigtop(util->stb, util);
 		push_b(util);
 		util->len--;
 	}
@@ -46,6 +63,15 @@ void	parse_medium(t_util *util)
 	{
 		ft_scan(util, util->chunk2, util->chunk3);
 		ft_move_chunks(util);
+		if (is_bigger(util) == 1)
+			sort_b(util->stb, util);
+		else
+			put_closemintop(util);
+
+		// if (is_bigger(util) == 0)
+		// 	sort_b(util->stb, util);
+		// else
+		// 	sort_b_bigtop(util->stb, util);
 		push_b(util);
 		util->len--;
 	}
@@ -58,6 +84,15 @@ void	parse_medium2(t_util *util)
 	{
 		ft_scan(util, util->chunk3, util->max);
 		ft_move_chunks(util);
+		if (is_bigger(util) == 1)
+			sort_b(util->stb, util);
+		else
+			put_closemintop(util);
+
+		// if (is_bigger(util) == 0)
+		// 	sort_b(util->stb, util);
+		// else
+		// 	sort_b_bigtop(util->stb, util);
 		push_b(util);
 		util->len--;
 	}

@@ -39,6 +39,7 @@ typedef struct s_util
 	int		lenstack;
 	int		small;
 	int		save;
+	int		close;
 	t_stack	*sta;
 	t_stack	*stb;
 	t_stack	*head_a;
@@ -95,5 +96,11 @@ int		test_int_max(char **argv, int *tab, int i, int j);
 void	addnew(t_util *util, int data);
 void	addnew_b(t_util *util, int data);
 void	init_list(t_util *util);
+int		is_bigger(t_util *util);
+void	sort_b_bigtop(t_stack *stb, t_util *util);
+void	fetch_min(t_util *util);
+void	put_mintop(t_util *util);
+int		ft_find_closest(t_stack *sta, t_util *util);
+void	put_closemintop(t_util *util);
 
 #endif
