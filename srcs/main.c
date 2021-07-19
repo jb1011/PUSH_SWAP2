@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "include/push_swap.h"
+#include "../include/push_swap.h"
 
 int	test_double(char **argv, int argc)
 {
