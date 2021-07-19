@@ -94,25 +94,6 @@ int	ft_find_small(t_stack *st, t_util *util)
 	return (min);
 }
 
-// void	sort_small(t_util *util)
-// {
-// 	int	min;
-
-// 	while (!is_a_sorted(util))
-// 	{
-// 		min = ft_find_small(util->sta, util);
-// 		if (util->sta->val == min)
-// 			push_b(util);
-// 		if (util->small > lenStack(util->sta) / 2)
-// 			rra(util);
-// 		else
-// 			ra(util);
-// 	}
-// 	while (util->stb)
-// 		push_a(util);
-// }
-
-
 void	sort_small(t_util *util)
 {
 	int	min;

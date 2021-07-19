@@ -6,7 +6,8 @@ OBJ_MAIN = ${MAIN:.c=.o}
 
 SRCS = srcs/utils.c srcs/utils2.c srcs/swap_ft.c \
 srcs/chunks.c srcs/sort_b.c srcs/sort_small.c srcs/utils3.c \
-srcs/chunksBig.c srcs/swap_ft2.c srcs/chunks2.c srcs/utils4.c
+srcs/chunksBig.c srcs/swap_ft2.c srcs/chunks2.c srcs/utils4.c \
+srcs/chunksBig2.c
 
 PATH_SRCS = ./
 
@@ -36,7 +37,7 @@ all:        ${NAME}
 ${NAME}:    ${MV} ${OBJ_MAIN} ${OBJS}
 			${LINK} ${MYLIB} ${OBJS}
 			ranlib ${MYLIB}
-			${CC} ${FLAGS} -o3 ${OBJ_MAIN} ${MYLIB} -o ${NAME} libft.a
+			${CC} ${FLAGS} -o3 ${OBJ_MAIN} ${MYLIB} -o ${NAME} libft/libft.a
 
 clean:
 			${RM} ${OBJ_MAIN} ${OBJS}

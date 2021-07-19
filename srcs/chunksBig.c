@@ -34,7 +34,7 @@ void	parse_big(t_util *util)
 	{
 		ft_scan(util, 0, util->chunk1);
 		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
+		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
 		else
 			put_closemintop(util);
@@ -45,18 +45,7 @@ void	parse_big(t_util *util)
 	{
 		ft_scan(util, util->chunk1, util->chunk2);
 		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
-			sort_b(util->stb, util);
-		else
-			put_closemintop(util);
-		push_b(util);
-		util->len--;
-	}
-	while (still_chunk(util, util->chunk2, util->chunk3))
-	{
-		ft_scan(util, util->chunk2, util->chunk3);
-		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
+		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
 		else
 			put_closemintop(util);
@@ -68,33 +57,22 @@ void	parse_big(t_util *util)
 
 void	parse_big_2(t_util *util)
 {
+	while (still_chunk(util, util->chunk2, util->chunk3))
+	{
+		ft_scan(util, util->chunk2, util->chunk3);
+		ft_move_chunks(util);
+		if (is_bigger(util) == 1)
+			sort_b(util->stb, util);
+		else
+			put_closemintop(util);
+		push_b(util);
+		util->len--;
+	}
 	while (still_chunk(util, util->chunk3, util->chunk4))
 	{
 		ft_scan(util, util->chunk3, util->chunk4);
 		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
-			sort_b(util->stb, util);
-		else
-			put_closemintop(util);
-		push_b(util);
-		util->len--;
-	}
-	while (still_chunk(util, util->chunk4, util->chunk5))
-	{
-		ft_scan(util, util->chunk4, util->chunk5);
-		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
-			sort_b(util->stb, util);
-		else
-			put_closemintop(util);
-		push_b(util);
-		util->len--;
-	}
-	while (still_chunk(util, util->chunk5, util->chunk6))
-	{
-		ft_scan(util, util->chunk5, util->chunk6);
-		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
+		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
 		else
 			put_closemintop(util);
@@ -106,33 +84,22 @@ void	parse_big_2(t_util *util)
 
 void	parse_big_3(t_util *util)
 {
-	while (still_chunk(util, util->chunk6, util->chunk7))
+	while (still_chunk(util, util->chunk4, util->chunk5))
 	{
-		ft_scan(util, util->chunk6, util->chunk7);
+		ft_scan(util, util->chunk4, util->chunk5);
 		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
+		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
 		else
 			put_closemintop(util);
 		push_b(util);
 		util->len--;
 	}
-	while (still_chunk(util, util->chunk7, util->chunk8))
+	while (still_chunk(util, util->chunk5, util->chunk6))
 	{
-		ft_scan(util, util->chunk7, util->chunk8);
+		ft_scan(util, util->chunk5, util->chunk6);
 		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
-			sort_b(util->stb, util);
-		else
-			put_closemintop(util);
-		push_b(util);
-		util->len--;
-	}
-	while (still_chunk(util, util->chunk8, util->chunk9))
-	{
-		ft_scan(util, util->chunk8, util->chunk9);
-		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
+		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
 		else
 			put_closemintop(util);
@@ -144,31 +111,27 @@ void	parse_big_3(t_util *util)
 
 void	parse_big_4(t_util *util)
 {
-	while (still_chunk(util, util->chunk9, util->chunk10))
+	while (still_chunk(util, util->chunk6, util->chunk7))
 	{
-		ft_scan(util, util->chunk9, util->chunk10);
+		ft_scan(util, util->chunk6, util->chunk7);
 		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
+		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
 		else
 			put_closemintop(util);
 		push_b(util);
 		util->len--;
 	}
-	while (still_chunk(util, util->chunk10, util->max))
+	while (still_chunk(util, util->chunk7, util->chunk8))
 	{
-		ft_scan(util, util->chunk10, util->max);
+		ft_scan(util, util->chunk7, util->chunk8);
 		ft_move_chunks(util);
-			if (is_bigger(util) == 1)
+		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
 		else
 			put_closemintop(util);
 		push_b(util);
 		util->len--;
 	}
-	while (is_empty(util->stb) != 1)
-	{
-		sort_b(util->stb, util);
-		push_a(util);
-	}
+	parse_big_5(util);
 }

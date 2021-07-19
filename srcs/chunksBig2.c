@@ -1,36 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   chunks2.c                                          :+:      :+:    :+:   */
+/*   chunksBig2.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jdemenet <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/22 14:16:01 by jdemenet          #+#    #+#             */
-/*   Updated: 2021/06/22 14:17:27 by jdemenet         ###   ########.fr       */
+/*   Created: 2021/07/19 11:37:05 by jdemenet          #+#    #+#             */
+/*   Updated: 2021/07/19 11:37:08 by jdemenet         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	still_chunk(t_util *util, int min, int max)
+void	parse_big_5(t_util *util)
 {
-	t_stack	*tmp;
-
-	tmp = util->sta;
-	while (tmp)
+	while (still_chunk(util, util->chunk8, util->chunk9))
 	{
-		if (tmp->val >= min && tmp->val <= max)
-			return (1);
-		tmp = tmp->next;
-	}
-	return (0);
-}
-
-void	parse_medium(t_util *util)
-{
-	while (still_chunk(util, 0, util->chunk1))
-	{
-		ft_scan(util, 0, util->chunk1);
+		ft_scan(util, util->chunk8, util->chunk9);
 		ft_move_chunks(util);
 		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
@@ -39,9 +25,9 @@ void	parse_medium(t_util *util)
 		push_b(util);
 		util->len--;
 	}
-	while (still_chunk(util, util->chunk1, util->chunk2))
+	while (still_chunk(util, util->chunk9, util->chunk10))
 	{
-		ft_scan(util, util->chunk1, util->chunk2);
+		ft_scan(util, util->chunk9, util->chunk10);
 		ft_move_chunks(util);
 		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);
@@ -50,30 +36,14 @@ void	parse_medium(t_util *util)
 		push_b(util);
 		util->len--;
 	}
-	parse_medium1(util);
+	parse_big_6(util);
 }
 
-void	parse_medium1(t_util *util)
+void	parse_big_6(t_util *util)
 {
-	while (still_chunk(util, util->chunk2, util->chunk3))
+	while (still_chunk(util, util->chunk10, util->max))
 	{
-		ft_scan(util, util->chunk2, util->chunk3);
-		ft_move_chunks(util);
-		if (is_bigger(util) == 1)
-			sort_b(util->stb, util);
-		else
-			put_closemintop(util);
-		push_b(util);
-		util->len--;
-	}
-	parse_medium2(util);
-}
-
-void	parse_medium2(t_util *util)
-{
-	while (still_chunk(util, util->chunk3, util->max))
-	{
-		ft_scan(util, util->chunk3, util->max);
+		ft_scan(util, util->chunk10, util->max);
 		ft_move_chunks(util);
 		if (is_bigger(util) == 1)
 			sort_b(util->stb, util);

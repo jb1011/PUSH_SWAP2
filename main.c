@@ -75,25 +75,23 @@ void	ft_parse_arg(char **argv, t_util *util)
 	char	**tab;
 	int		arr[10000];
 
-	j = 0;
+	j = -1;
 	util->go = 0;
 	tab = ft_split(argv[1], ' ');
-	while (tab[j])
+	while (tab[++j])
 	{
-		i = 0;
-		while (tab[j][i])
+		i = -1;
+		while (tab[j][++i])
 		{
 			if (tab[j][i] < '0' || tab[j][i] > '9')
 			{
 				ft_putstr_fd("Error\n", 0);
 				return ;
 			}
-			i++;
 		}
 		if (test_int_max(tab, arr, j, j) == 0)
 			return ;
 		free(tab[j]);
-		j++;
 	}
 	free(tab);
 	ft_check_double_arg(arr, j, util);

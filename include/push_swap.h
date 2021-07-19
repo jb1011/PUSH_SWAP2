@@ -102,5 +102,8 @@ void	fetch_min(t_util *util);
 void	put_mintop(t_util *util);
 int		ft_find_closest(t_stack *sta, t_util *util);
 void	put_closemintop(t_util *util);
+void	parse_medium1(t_util *util);
+void	parse_big_5(t_util *util);
+void	parse_big_6(t_util *util);
 
 #endif
